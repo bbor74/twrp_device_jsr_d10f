@@ -1,0 +1,13 @@
+diff --git a/partitionmanager.cpp b/partitionmanager.cpp
+index 5d0fb01..3b20c35 100644
+--- a/partitionmanager.cpp
++++ b/partitionmanager.cpp
+@@ -1522,7 +1522,7 @@ int TWPartitionManager::usb_storage_enable(void) {
+ 			if (!Open_Lun_File(Mount1->Mount_Point, lun_file)) {
+ 				goto error_handle;
+ 			}
+-			sprintf(lun_file, CUSTOM_LUN_FILE, 1);
++			sprintf(lun_file, CUSTOM_LUN_FILE, 2);
+ 			Mount2 = Find_Next_Storage(Mount1->Mount_Point, "/data");
+ 			if (Mount2) {
+ 				Open_Lun_File(Mount2->Mount_Point, lun_file);
