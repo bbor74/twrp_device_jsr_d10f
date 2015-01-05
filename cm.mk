@@ -1,9 +1,9 @@
 # Inherit device configuration
-$(call inherit-product, device/xiaomi/armani/device.mk)
+$(call inherit-product, device/jsr/d10f/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := armani
-PRODUCT_NAME := cm_armani
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := HM 1S
+PRODUCT_DEVICE := d10f
+PRODUCT_NAME := cm_d10f
+PRODUCT_BRAND := HighScreen
+PRODUCT_MANUFACTURER := HighScreen
+PRODUCT_MODEL := Boost IIse

@@ -1,4 +1,4 @@
-LOCAL_PATH := device/xiaomi/armani
+LOCAL_PATH := device/jsr/d10f
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
@@ -13,4 +13,4 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_NAME := armani
+PRODUCT_NAME := d10f
