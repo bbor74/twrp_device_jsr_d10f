@@ -21,3 +21,4 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo cm_d10f-eng
+add_lunch_combo omni_d10f-eng
