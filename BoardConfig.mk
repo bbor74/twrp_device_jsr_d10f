@@ -31,6 +31,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_DTBTOOL_ARGS := --force-v2
 KERNEL_HAS_FINIT_MODULE := false
 
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+   HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
+
 # Partitions
 # TARGET_COPY_OUT_VENDOR := vendor
 
