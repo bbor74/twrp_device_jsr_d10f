@@ -11,6 +11,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/dt.img:dt.img \
     $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom
 
-$(call inherit-product, build/target/product/full.mk)
+$(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_NAME := d10f
