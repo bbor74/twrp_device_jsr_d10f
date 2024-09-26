@@ -7,8 +7,6 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/kernel:kernel \
-    $(LOCAL_PATH)/dt.img:dt.img \
     $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom
 
 $(call inherit-product, build/target/product/full.mk)
