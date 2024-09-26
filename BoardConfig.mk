@@ -14,12 +14,15 @@ TARGET_CPU_SMP := true
 TARGET_CPU_VARIANT := krait
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/jsr/d10f/kernel
+TARGET_KERNEL_SOURCE := kernel/jsr/msm8226
+TARGET_KERNEL_CONFIG := jsr_d10f_defconfig
 BOARD_KERNEL_CMDLINE := console=console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 lpj=192000
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --dt device/jsr/d10f/dt.img --kernel_offset 0x00008000 --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
+# BOARD_KERNEL_SEPARATED_DT := true
+BOARD_DTBTOOL_ARGS := --force-v2
+KERNEL_HAS_FINIT_MODULE := false
 
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
