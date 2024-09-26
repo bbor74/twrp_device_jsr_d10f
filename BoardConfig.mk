@@ -15,6 +15,7 @@ TARGET_CPU_VARIANT := krait
 
 # Kernel
 TARGET_PREBUILT_KERNEL := device/jsr/d10f/kernel
+BOARD_KERNEL_PREBUILT_DT := true
 BOARD_KERNEL_CMDLINE := console=console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 lpj=192000
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
