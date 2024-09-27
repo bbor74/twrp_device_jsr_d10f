@@ -16,7 +16,7 @@ TARGET_CPU_VARIANT := krait
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/jsr/msm8226
 TARGET_KERNEL_CONFIG := jsr_d10f_defconfig
-BOARD_KERNEL_CMDLINE := console=console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 lpj=192000
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=d10f androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
