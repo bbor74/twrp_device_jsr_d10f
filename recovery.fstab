@@ -13,5 +13,5 @@
 /sdi      emmc /dev/block/platform/msm_sdcc.1/by-name/sdi       flags=backup=1;display="SDI"
 /misc     emmc /dev/block/platform/msm_sdcc.1/by-name/misc      flags=backup=1;display="Misc"
 /sdcard   vfat /dev/block/platform/msm_sdcc.1/by-name/usbmsc    flags=display="Internal SD";storagename="Internal SD";storage;wipeingui;removable
-/external_sd   vfat /dev/block/mmcblk1p1                        flags=display="SD card";storagename="SD card";storage;wipeingui;removable
+/external_sd   vfat /dev/block/mmcblk1p1                        flags=display="SD card";storagename="SD card";storage;wipeingui;removable;settingsstorage
 /usb-otg  vfat /dev/block/sda1 /dev/block/sda                   flags=display="USB OTG";storagename="USB OTG";storage;wipeingui;removable;fsflags=utf8
