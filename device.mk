@@ -9,6 +9,11 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom
 
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=D10A_HighScreen
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.board=MSM8226 \
+    ro.board.platform=msm8226 \
+
 $(call inherit-product, build/target/product/full_base.mk)
 
-PRODUCT_NAME := d10f
