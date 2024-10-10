@@ -24,6 +24,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_DTBTOOL_ARGS := --force-v2
 KERNEL_HAS_FINIT_MODULE := false
 
+# Partitions
+TARGET_COPY_OUT_VENDOR := vendor
+
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
