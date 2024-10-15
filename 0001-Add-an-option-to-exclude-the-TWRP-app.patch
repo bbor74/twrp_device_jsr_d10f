@@ -1,4 +1,4 @@
-From f74c7618a3ffc1b19bf311783bd63b095a2a2952 Mon Sep 17 00:00:00 2001
+From 40678612d8af99525aeb42a4052f2796e8fe3017 Mon Sep 17 00:00:00 2001
 From: nailyk-fr <nailyk_git@nailyk.fr>
 Date: Tue, 8 Aug 2017 21:23:35 +0200
 Subject: [PATCH] Add an option to exclude the TWRP app
@@ -20,12 +20,12 @@ Change-Id: I830df65a57ae9d7e05a3e349cd8a9c630498e2d4
  6 files changed, 12 insertions(+)
 
 diff --git a/Android.mk b/Android.mk
-index aedb3f9a..38ec4f58 100755
+index 7bbd66ef..12332d90 100755
 --- a/Android.mk
 +++ b/Android.mk
-@@ -442,6 +442,9 @@ ifneq ($(TW_INCLUDE_LIBRESETPROP),)
-         LOCAL_CFLAGS += -DTW_INCLUDE_LIBRESETPROP
-     endif
+@@ -406,6 +406,9 @@ ifneq ($(TW_INCLUDE_LIBRESETPROP),)
+     LOCAL_C_INCLUDES += external/magisk-prebuilt/include
+     LOCAL_CFLAGS += -DTW_INCLUDE_LIBRESETPROP
  endif
 +ifeq ($(TW_EXCLUDE_TWRPAPP),true)
 +    LOCAL_CFLAGS += -DTW_EXCLUDE_TWRPAPP
@@ -34,10 +34,10 @@ index aedb3f9a..38ec4f58 100755
      LOCAL_CFLAGS += -DTW_EXCLUDE_NANO
  endif
 diff --git a/data.cpp b/data.cpp
-index bc31a650..d8b83781 100755
+index 96e4b5e8..db4d365d 100755
 --- a/data.cpp
 +++ b/data.cpp
-@@ -915,11 +915,15 @@ void DataManager::SetDefaultValues()
+@@ -938,11 +938,15 @@ void DataManager::SetDefaultValues()
  	mConst.SetValue("tw_app_installed_in_system", "0");
  #else
  	mConst.SetValue("tw_oem_build", "0");
@@ -54,10 +54,10 @@ index bc31a650..d8b83781 100755
  	mConst.SetValue("tw_include_nano", "1");
  #else
 diff --git a/gui/theme/common/landscape.xml b/gui/theme/common/landscape.xml
-index a3bbfa78..a26c4e39 100755
+index c0d14d89..2a732f86 100755
 --- a/gui/theme/common/landscape.xml
 +++ b/gui/theme/common/landscape.xml
-@@ -3614,6 +3614,7 @@
+@@ -3836,6 +3836,7 @@
  					</actions>
  				</listitem>
  				<listitem name="{@reboot_install_app_hdr=Install TWRP App}">
@@ -66,10 +66,10 @@ index a3bbfa78..a26c4e39 100755
  					<actions>
  						<action function="set">tw_back=advanced</action>
 diff --git a/gui/theme/common/portrait.xml b/gui/theme/common/portrait.xml
-index 1b48fb98..671bf339 100755
+index 1e3d0f83..019acf55 100755
 --- a/gui/theme/common/portrait.xml
 +++ b/gui/theme/common/portrait.xml
-@@ -3736,6 +3736,7 @@
+@@ -3959,6 +3959,7 @@
  					</actions>
  				</listitem>
  				<listitem name="{@reboot_install_app_hdr=Install TWRP App}">
@@ -78,10 +78,10 @@ index 1b48fb98..671bf339 100755
  					<actions>
  						<action function="set">tw_back=advanced</action>
 diff --git a/gui/theme/common/watch.xml b/gui/theme/common/watch.xml
-index 36843561..b4f36a56 100755
+index 7d9888da..ce84443d 100755
 --- a/gui/theme/common/watch.xml
 +++ b/gui/theme/common/watch.xml
-@@ -4371,6 +4371,7 @@
+@@ -4446,6 +4446,7 @@
  					</actions>
  				</listitem>
  				<listitem name="{@reboot_install_app_hdr=Install TWRP App}">
@@ -90,19 +90,19 @@ index 36843561..b4f36a56 100755
  					<actions>
  						<action function="set">tw_back=advanced2</action>
 diff --git a/prebuilt/Android.mk b/prebuilt/Android.mk
-index 17636ae6..6c1060aa 100644
+index 6b5490ab..a3c17db2 100755
 --- a/prebuilt/Android.mk
 +++ b/prebuilt/Android.mk
-@@ -569,6 +569,7 @@ ifeq ($(TW_USE_TOOLBOX), true)
-     include $(BUILD_PREBUILT)
+@@ -516,6 +516,7 @@ ifeq ($(TW_USE_TOOLBOX), true)
+    include $(BUILD_PREBUILT)
  endif
  
 +ifneq ($(TW_EXCLUDE_TWRPAPP),true)
  #TWRP App "placeholder"
  include $(CLEAR_VARS)
  LOCAL_MODULE := me.twrp.twrpapp.apk
-@@ -577,6 +578,7 @@ LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES
- LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
+@@ -524,6 +525,7 @@ LOCAL_MODULE_CLASS := EXECUTABLES
+ LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/system/bin
  LOCAL_SRC_FILES := $(LOCAL_MODULE)
  include $(BUILD_PREBUILT)
 +endif
