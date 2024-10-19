@@ -1,0 +1,29 @@
+From 5e07d091593ee134171a92b368aee560f4165fbc Mon Sep 17 00:00:00 2001
+From: Boris Belyaev <bbor1974@gmail.com>
+Date: Sat, 19 Oct 2024 13:22:19 +0400
+Subject: [PATCH] Don't use metadata checksums in ext4 image
+
+Fix error in dmesg.log:
+[   92.818716] 3,1026,92818716;EXT4-fs (mmcblk0p25): couldn't mount RDWR because of unsupported optional features (400)
+
+Change-Id: I5d52f718a3dc9105ca6dca2386c1872dee0d890e
+---
+ partition.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/partition.cpp b/partition.cpp
+index 99f4949e..22a12c90 100755
+--- a/partition.cpp
++++ b/partition.cpp
+@@ -2249,7 +2249,7 @@ bool TWPartition::Wipe_EXTFS(string File_System) {
+ 	gui_msg(Msg("formatting_using=Formatting {1} using {2}...")(Display_Name)("mke2fs"));
+ 
+ 	// Execute mke2fs to create empty ext4 filesystem
+-	Command = "mke2fs -t " + File_System + " -b 4096 " + Actual_Block_Device + " " + size_str;
++	Command = "mke2fs -t " + File_System + " -O ^metadata_csum -b 4096 " + Actual_Block_Device + " " + size_str;
+ 	LOGINFO("mke2fs command: %s\n", Command.c_str());
+ 	ret = TWFunc::Exec_Cmd(Command);
+ 	if (ret) {
+-- 
+2.17.1
+
