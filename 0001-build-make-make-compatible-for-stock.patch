@@ -1,0 +1,26 @@
+From 9b7b118ead74ab2807f5bb557c6dde8e9915d7d9 Mon Sep 17 00:00:00 2001
+From: Boris Belyaev <bbor1974@gmail.com>
+Date: Sat, 19 Oct 2024 15:50:43 +0400
+Subject: [PATCH] build/make: make compatible for stock
+
+Change-Id: Id93258a8cd4d3257ad8f16404cceb25b63516fc6
+---
+ tools/buildinfo.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tools/buildinfo.sh b/tools/buildinfo.sh
+index b0497cf7a..353ad40cc 100755
+--- a/tools/buildinfo.sh
++++ b/tools/buildinfo.sh
+@@ -53,7 +53,7 @@ echo "ro.wifi.channels=$PRODUCT_DEFAULT_WIFI_CHANNELS"
+ 
+ if [ "$TARGET_UNIFIED_DEVICE" == "" ] ; then
+     echo "# ro.build.product is obsolete; use ro.product.device"
+-    echo "ro.build.product=$TARGET_DEVICE"
++    echo "ro.build.product=$OMNI_DEVICE"
+     echo "# Do not try to parse description, fingerprint, or thumbprint"
+     echo "ro.build.description=$PRIVATE_BUILD_DESC"
+     echo "ro.build.fingerprint=$BUILD_FINGERPRINT"
+-- 
+2.17.1
+
