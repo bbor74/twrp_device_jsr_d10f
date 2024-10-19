@@ -40,6 +40,7 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 # TWRP-Specific
 TW_THEME := portrait_hdpi
 TWHAVE_SELINUX := true
+TW_USE_TOOLBOX := true
 TW_NO_EXFAT_FUSE := true
 TW_EXCLUDE_TWRPAPP := true
 # RECOVERY_SDCARD_ON_DATA := true
