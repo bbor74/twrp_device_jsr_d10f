@@ -55,6 +55,7 @@ TW_NO_EXFAT_FUSE := true
 TW_EXCLUDE_TWRPAPP := true
 # TW_OEM_BUILD := true
 TW_USE_TOOLBOX := true
+TW_USE_PIGZ9 := true
 TW_EXCLUDE_MTP := true
 TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_NANO := true
