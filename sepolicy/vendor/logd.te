@@ -1,0 +1,5 @@
+#============= logd ==============
+allow logd rootfs:dir read;
+allow logd rootfs:file { entrypoint execute getattr open read };
+allow logd socket_device:dir { add_name write };
+allow logd socket_device:sock_file create;

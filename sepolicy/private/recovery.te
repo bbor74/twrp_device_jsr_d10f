@@ -1,0 +1,7 @@
+allow recovery rollback_data_file:dir { getattr open read };
+allow recovery storaged_data_file:dir { getattr open read };
+allow recovery storaged_data_file:file getattr;
+allow recovery wm_trace_data_file:dir { getattr open read };
+
+allowxperm recovery block_device:blk_file ioctl { BLKGETSIZE };
+

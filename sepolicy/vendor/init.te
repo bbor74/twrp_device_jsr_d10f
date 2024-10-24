@@ -1,0 +1,2 @@
+#============= init ==============
+dontaudit init rootfs:file { create write };

@@ -51,6 +51,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_RAMDISK_USE_LZMA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
+# Sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/jsr/d10f/sepolicy/private
+BOARD_VENDOR_SEPOLICY_DIRS += device/jsr/d10f/sepolicy/vendor
+
 # TWRP-Specific
 TW_THEME := portrait_hdpi
 TWHAVE_SELINUX := true
