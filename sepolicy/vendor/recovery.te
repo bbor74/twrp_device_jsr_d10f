@@ -250,3 +250,8 @@ allow recovery wpa_socket:dir { getattr open read };
 
 #============= recovery ==============
 # allow recovery init_perf_lsm_hooks_prop:file read;
+
+#============= recovery ==============
+allow recovery exfat:dir { add_name write };
+allow recovery exfat:file { create setattr write };
+
