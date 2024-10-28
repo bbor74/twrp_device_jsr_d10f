@@ -64,7 +64,6 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_TOOLBOX := true
 TW_USE_PIGZ9 := true
 TW_EXCLUDE_MTP := true
-TW_EXCLUDE_TZDATA := true
 TW_EXCLUDE_NANO := true
 TW_EXCLUDE_LIBXML2 := true
 # TW_DISABLE_TTF := true # get bootloop
