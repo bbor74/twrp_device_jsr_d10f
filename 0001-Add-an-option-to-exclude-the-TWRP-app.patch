@@ -53,18 +53,6 @@ index 96e4b5e8..db4d365d 100755
  #ifndef TW_EXCLUDE_NANO
  	mConst.SetValue("tw_include_nano", "1");
  #else
-diff --git a/gui/theme/common/landscape.xml b/gui/theme/common/landscape.xml
-index c0d14d89..2a732f86 100755
---- a/gui/theme/common/landscape.xml
-+++ b/gui/theme/common/landscape.xml
-@@ -3836,6 +3836,7 @@
- 					</actions>
- 				</listitem>
- 				<listitem name="{@reboot_install_app_hdr=Install TWRP App}">
-+					<condition var1="tw_app_prompt" op="!=" var2="-1"/>
- 					<condition var1="tw_app_install_status" var2="1"/>
- 					<actions>
- 						<action function="set">tw_back=advanced</action>
 diff --git a/gui/theme/common/portrait.xml b/gui/theme/common/portrait.xml
 index 1e3d0f83..019acf55 100755
 --- a/gui/theme/common/portrait.xml
@@ -77,18 +65,6 @@ index 1e3d0f83..019acf55 100755
  					<condition var1="tw_app_install_status" var2="1"/>
  					<actions>
  						<action function="set">tw_back=advanced</action>
-diff --git a/gui/theme/common/watch.xml b/gui/theme/common/watch.xml
-index 7d9888da..ce84443d 100755
---- a/gui/theme/common/watch.xml
-+++ b/gui/theme/common/watch.xml
-@@ -4446,6 +4446,7 @@
- 					</actions>
- 				</listitem>
- 				<listitem name="{@reboot_install_app_hdr=Install TWRP App}">
-+					<condition var1="tw_app_prompt" op="!=" var2="-1"/>
- 					<condition var1="tw_app_install_status" var2="1"/>
- 					<actions>
- 						<action function="set">tw_back=advanced2</action>
 diff --git a/prebuilt/Android.mk b/prebuilt/Android.mk
 index 6b5490ab..a3c17db2 100755
 --- a/prebuilt/Android.mk
