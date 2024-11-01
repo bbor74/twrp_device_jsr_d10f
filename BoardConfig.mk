@@ -40,6 +40,8 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 # USB Mounting
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
