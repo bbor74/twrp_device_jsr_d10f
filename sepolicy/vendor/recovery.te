@@ -81,8 +81,8 @@ dontaudit recovery dropbox_data_file:dir { getattr open read };
 allow recovery dropbox_data_file:file getattr;
 allow recovery dumpstate_options_prop:file { getattr open };
 allow recovery dynamic_system_prop:file { getattr open };
-allow recovery exfat:dir { open read };
-allow recovery exfat:file { getattr open read };
+allow recovery exfat:dir { open read add_name write };
+allow recovery exfat:file { getattr open read create setattr write };
 allow recovery exported_audio_prop:file { getattr open };
 allow recovery exported_bluetooth_prop:file { getattr open };
 allow recovery exported_camera_prop:file { getattr open };
@@ -122,7 +122,7 @@ allow recovery llkd_prop:file { getattr open };
 allow recovery lmkd_prop:file { getattr open };
 allow recovery logd:unix_stream_socket connectto;
 allow recovery logdr_socket:sock_file write;
-allow recovery logpersistd_logging_prop:file { getattr open };
+allow recovery logpersistd_logging_prop:file { getattr open read };
 allow recovery lowpan_prop:file { getattr open };
 allow recovery lpdumpd_prop:file { getattr open };
 allow recovery media_data_file:dir { getattr open read };
@@ -245,13 +245,8 @@ allow recovery wpa_data_file:dir { getattr open read };
 allow recovery wpa_data_file:file getattr;
 allow recovery wpa_socket:dir { getattr open read };
 
-# allow recovery block_device:blk_file ioctl;
-# allowxperm recovery block_device:ioctl blk_file 0x1260;
-
 #============= recovery ==============
-# allow recovery init_perf_lsm_hooks_prop:file read;
+allow recovery mnt_user_file:dir getattr;
+allow recovery mtp_device:chr_file { open read write };
 
-#============= recovery ==============
-allow recovery exfat:dir { add_name write };
-allow recovery exfat:file { create setattr write };
-
+allow recovery exfat:file ioctl;
