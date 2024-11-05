@@ -1,0 +1,6 @@
+on charger
+    trigger late-init
+
+on fs
+    exec u:r:update_engine:s0 root root -- /sbin/fstab /etc/recovery.fstab twrp generate
+    exec u:r:update_engine:s0 root root -- /sbin/fstab /etc/recovery.fstab twrp update

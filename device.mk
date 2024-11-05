@@ -7,7 +7,7 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fstab.qcom:root/fstab.qcom
+    $(LOCAL_PATH)/fstab:root/sbin/fstab
 
 PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=D10A_HighScreen
 
