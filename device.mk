@@ -17,3 +17,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, build/target/product/full_base.mk)
 
+# Signing keys
+PRODUCT_EXTRA_RECOVERY_KEYS += vendor/jsr/signing/keys/releasekey
